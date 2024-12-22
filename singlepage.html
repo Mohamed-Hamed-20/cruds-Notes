@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Note Details</title>
+  </head>
+  <body>
+    <div id="note-details"></div>
+
+    <script>
+      const callApi = async (url, method, data) => {
+        const response = await fetch(url, {
+          method: method,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+
+        return await response.json();
+      };
+
+      const loadNoteDetails = async () => {
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get("id");
+
+        const response = await callApi(
+          `http://localhost:8000/notes?id=${id}`,
+          "GET"
+        );
+        console.log(response);
+
+        document.getElementById("note-details").innerHTML = `
+          <h3 class="note-title">${response[0].title}</h3>
+          <p class="note-content">${response[0].content}</p>
+          <p class="note-date">Date: ${response[0].date}</p>
+          ${
+            response[0].isImportant
+              ? '<span class="note-important">Important</span>'
+              : ""
+          }
+        `;
+      };
+
+      loadNoteDetails();
+    </script>
+  </body>
+</html>

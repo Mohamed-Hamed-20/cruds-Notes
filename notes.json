@@ -1,0 +1,102 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "title": "Grocery Shopping",
+      "content": "Buy fresh vegetables, fruits, and dairy products from the supermarket.",
+      "date": "2024-12-22",
+      "isImportant": true
+    },
+    {
+      "id": 2,
+      "title": "Code Review",
+      "content": "Review the client project code and suggest improvements.",
+      "date": "2024-12-21",
+      "isImportant": false
+    },
+    {
+      "id": 3,
+      "title": "Prepare Presentation",
+      "content": "Create slides for the upcoming team meeting on Tuesday.",
+      "date": "2024-12-20",
+      "isImportant": true
+    },
+    {
+      "id": 4,
+      "title": "Doctor Appointment",
+      "content": "Visit the doctor for a routine health check-up.",
+      "date": "2024-12-25",
+      "isImportant": false
+    },
+    {
+      "id": 5,
+      "title": "Client Call",
+      "content": "Discuss project updates and deliverables with the client over a call.",
+      "date": "2024-12-23",
+      "isImportant": false
+    },
+    {
+      "id": 6,
+      "title": "Team Brainstorming",
+      "content": "Brainstorm ideas for the new feature implementation with the team.",
+      "date": "2024-12-24",
+      "isImportant": true
+    },
+    {
+      "id": 7,
+      "title": "Read a Book",
+      "content": "Finish reading 'Atomic Habits' to improve productivity.",
+      "date": "2024-12-26",
+      "isImportant": false
+    },
+    {
+      "id": 8,
+      "title": "Plan Weekend Trip",
+      "content": "Organize a short weekend trip with friends.",
+      "date": "2024-12-27",
+      "isImportant": true
+    },
+    {
+      "id": 9,
+      "title": "Online Workshop",
+      "content": "Attend an online workshop on advanced JavaScript concepts.",
+      "date": "2024-12-28",
+      "isImportant": false
+    },
+    {
+      "id": 10,
+      "title": "Fitness Routine",
+      "content": "Design a new fitness plan and set weekly workout goals.",
+      "date": "2024-12-29",
+      "isImportant": true
+    },
+    {
+      "id": "08aa",
+      "title": "Mohamed",
+      "content": "Hamed",
+      "date": "2002-03-20",
+      "isImportant": true
+    },
+    {
+      "id": "fe32",
+      "title": "MOhamed",
+      "content": "salaha",
+      "date": "2002-03-20",
+      "isImportant": true
+    },
+    {
+      "id": "bd50",
+      "title": "Mohamed Hamed",
+      "content": "BEST man in the world",
+      "date": "2024-12-22",
+      "isImportant": true
+    },
+    {
+      "id": "6e08",
+      "title": "mohamed hamed abdal aziz",
+      "content": "html and css and js ",
+      "date": "2002-02-12",
+      "isImportant": true
+    }
+  ]
+}
