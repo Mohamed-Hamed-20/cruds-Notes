@@ -31,6 +31,7 @@ class Notes {
       date: this.date,
       isImportant: this.isImportant,
     };
+
     const res = await callApi("http://localhost:8000/notes", "POST", data);
 
     if (res) {
@@ -83,7 +84,7 @@ class Notes {
 }
 
 // For create or add new note
-document.querySelector("form").addEventListener("submit", (event) => {
+document.querySelector("form").addEventListener("submit", async (event) => {
   event.preventDefault();
 
   const title = document.getElementById("title").value;
@@ -92,7 +93,7 @@ document.querySelector("form").addEventListener("submit", (event) => {
   const isImp = document.getElementById("important").checked;
 
   const note = new Notes(title, content, date, isImp);
-  note.createNote();
+  await note.createNote();
 
   // Clear form inputs
   document.getElementById("title").value = "";
@@ -109,20 +110,27 @@ const getdata = async () => {
 getdata();
 
 // Event Delegation for Update and Delete
-document.getElementById("notes").addEventListener("click", (event) => {
+document.getElementById("notes").addEventListener("click", async (event) => {
   const target = event.target;
 
   if (target.classList.contains("btn-update")) {
     const id = target.dataset.id;
-    updateNoteHandler(id);
+    console.log(id);
+    console.log(event);
+
+    await updateNoteHandler(id);
   } else if (target.classList.contains("btn-delete")) {
     const id = target.dataset.id;
-    noteInstance.deleteNote(id);
+    console.log(id);
+    console.log(target);
+
+    await noteInstance.deleteNote(id);
   }
 });
 
 // Update Note Handler
 const updateNoteHandler = async (id) => {
+  //get data to add inputs feild ## should i send it from my div will be better
   const response = await callApi(`http://localhost:8000/notes?id=${id}`, "GET");
 
   document.getElementById("title").value = response[0].title;
@@ -130,7 +138,7 @@ const updateNoteHandler = async (id) => {
   document.getElementById("date").value = response[0].date;
   mainBtn.textContent = "Update Note";
   mainBtn.classList.add("updateBtn");
-  scrollTo(0, 0);
+  scrollTo(0, 0,);
 
   mainBtn.onclick = async () => {
     const updatedData = {
@@ -142,6 +150,7 @@ const updateNoteHandler = async (id) => {
 
     await callApi(`http://localhost:8000/notes/${id}`, "PUT", updatedData);
     alert("Note Updated Successfully");
+    //back to normal
     mainBtn.textContent = "Submit";
     mainBtn.classList.remove("updateBtn");
     getdata();
