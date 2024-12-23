@@ -1,7 +1,8 @@
-to watch with data
+## To watch project with data in live server
 
-1- install : npm install -g json-server
+###### RUN This Command In terminal 
+1- install : `npm install -g json-server`
 
-2 - json-server --watch notes.json --port 8000
+2 - `json-server --watch notes.json --port 8000`
 
-3- run file Index.html
+3- run file `Index.html`
